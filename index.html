@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acordeón con HTML y CSS</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f9f9f9;
+    }
+
+    .acordeon {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .acordeon-item {
+      margin-bottom: 10px;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .acordeon input {
+      display: none;
+    }
+
+    .acordeon-label {
+      display: block;
+      padding: 15px 20px;
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .acordeon-content {
+      max-height: 0;
+      overflow: hidden;
+      background: white;
+      padding: 0 20px;
+      transition: max-height 0.3s ease;
+    }
+
+    .acordeon input:checked + .acordeon-label + .acordeon-content {
+      max-height: 200px; /* ajusta según tu contenido */
+      padding: 15px 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Acordeón con solo HTML y CSS</h1>
+
+  <div class="acordeon">
+    <!-- Ítem 1 -->
+    <div class="acordeon-item">
+      <input type="checkbox" id="item1">
+      <label class="acordeon-label" for="item1">¿Qué es HTML?</label>
+      <div class="acordeon-content">
+        <p>HTML es el lenguaje de marcado utilizado para estructurar páginas web.</p>
+      </div>
+    </div>
+
+    <!-- Ítem 2 -->
+    <div class="acordeon-item">
+      <input type="checkbox" id="item2">
+      <label class="acordeon-label" for="item2">¿Qué es CSS?</label>
+      <div class="acordeon-content">
+        <p>CSS es el lenguaje de estilos utilizado para diseñar y dar formato a páginas web.</p>
+      </div>
+    </div>
+
+    <!-- Ítem 3 -->
+    <div class="acordeon-item">
+      <input type="checkbox" id="item3">
+      <label class="acordeon-label" for="item3">¿Puedo hacerlo sin JavaScript?</label>
+      <div class="acordeon-content">
+        <p>¡Sí! Con técnicas de CSS como esta, puedes crear componentes interactivos sin usar JavaScript.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
